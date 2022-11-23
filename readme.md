@@ -8,4 +8,6 @@ Déplace tous les fichiers dans un dossier backup.tar et le copie dans un Bucket
 
 ## Utilisation
 
-Il faut mapper les volumes à sauvegarder sur le conteneur et lui indiquer les chemins dans 'start-script.sh', de même pour les bases de données.
+Il faut mapper les volumes à sauvegarder sur le conteneur et lui indiquer les chemins dans 'start-script.sh'.
+
+Pour les bases de données, il faut indiquer le nom du conteneur, utilisateur et mot de passe.
