@@ -2,7 +2,7 @@
 
 ## Présentation 
 
-Le conteneur sauvegarde les volumes mappé et se connecte au base de donnée pour créer un .sql.
+Le conteneur sauvegarde les volumes mappé et se connecte aux bases de données pour créer un .sql.
 Déplace tous les fichiers dans un dossier backup.tar et le copie dans un Bucket S3 de Amazon.
 
 ## Utilisation
