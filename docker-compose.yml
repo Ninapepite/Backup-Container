@@ -1,0 +1,33 @@
+version: "3.9"
+    
+services:
+  backup:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: backup
+    volumes:
+    #Volumes à sauvegarder
+      - /var/lib/docker/volumes/docker_glpi_data/_data:/glpi_data
+      - /var/lib/docker/volumes/docker_wordpress_data/_data:/wps_data
+      - /var/lib/docker/volumes/docker_mariadb_data/_data:/glpi_db
+      - /var/lib/docker/volumes/docker_dbwps_data/_data:/wps_dbi
+      #Volume pour voir les autres conteneurs et se connecter
+      - /var/run/docker.sock:/var/run/docker.sock 
+    environment:
+    #Variable pour se connecter et sauvegarder les DBs
+      # - ConteneurDB1=docker-dbmysql-1
+      # - UserDB1=root
+      # - PassDB1=X5c6K7R@uGe^
+      # - ConteneurDB2=mariadb
+      # - UserDB2=root
+      # - PassDB2=X45n3%hC9N*n
+
+      #Rentrer vous identifiants S3
+      #Clé 
+      - AccessKey=
+      #Secret Clé
+      - AccessPass=
+      # Point d'accès HTTPS
+      - AccessPoint=
+    hostname: backupcontainer
